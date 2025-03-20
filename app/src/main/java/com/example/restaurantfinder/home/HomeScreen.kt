@@ -7,15 +7,14 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.restaurantfinder.auth.AuthViewModel
 import com.example.restaurantfinder.auth.AuthState
+import com.example.restaurantfinder.auth.AuthViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -26,7 +25,7 @@ fun HomeScreen(
 ) {
     val authState by authViewModel.authState.collectAsState()
     val navController = rememberNavController()
-    var selectedTab by remember { mutableStateOf(0) }
+    var selectedTab by remember { mutableIntStateOf(0) }
 
     // Add this effect to observe auth state changes
     LaunchedEffect(authState) {
