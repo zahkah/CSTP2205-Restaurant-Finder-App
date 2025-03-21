@@ -150,7 +150,7 @@ fun SignUpScreen(
         }
     }
 }
-// Add this at the bottom of your SignUpScreen.kt file
+
 @Preview(showBackground = true)
 @Composable
 fun SignUpScreenPreview() {
